@@ -23,8 +23,9 @@ void regtest() {
     recipes.addFurnaceRecipeAuxData(ItemInstance(*ItemRegistryManager::getItemRegistry().lookupByName("minecraft:stick"), 0, 0, 0), Helper::cteateBetStick(), fTags);
 }
 
-THook(void, "?addLooseCreativeItems@Item@@SAX_NAEBVBaseGameVersion@@@Z", void* a1) {
-    original(a1);
-    //Ning
-    //Item::addCreativeItem(Helper::cteateBetStick());
-}
+//Ning
+//THook(void, "?addLooseCreativeItems@Item@@SAX_NAEBVBaseGameVersion@@@Z", void* a1) {
+//    original(a1);
+//    //Ning
+//    //Item::addCreativeItem(Helper::cteateBetStick());
+//}
