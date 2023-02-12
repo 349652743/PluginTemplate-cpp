@@ -25,5 +25,6 @@ void regtest() {
 
 THook(void, "?addLooseCreativeItems@Item@@SAX_NAEBVBaseGameVersion@@@Z", void* a1) {
     original(a1);
-    Item::addCreativeItem(Helper::cteateBetStick());
+    //Ning
+    //Item::addCreativeItem(Helper::cteateBetStick());
 }

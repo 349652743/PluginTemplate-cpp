@@ -23,20 +23,20 @@ public:
 #include <MC/KeyOrNameResult.hpp>
 
 namespace Helper {
-
-	inline static struct KeyOrNameResult buildActorDisplayName(enum ActorType a0, std::string const& a1, class Actor const* a2) {
-		struct KeyOrNameResult(*rv)(enum ActorType, std::string const&, class Actor const*);
-		*((void**)&rv) = dlsym("?buildActorDisplayName@@YA?AUKeyOrNameResult@@W4ActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVActor@@@Z");
-		return (*rv)(std::forward<enum ActorType>(a0), std::forward<std::string const&>(a1), std::forward<class Actor const*>(a2));
-	}
-	
-	inline string buildActorDisplayNames(ActorType a2, string a3, Actor* a4) {
-		auto key = buildActorDisplayName(a2, a3, a4);
-		if (!key.misKey) {
-			return key.mName;
-		}
-		return "";
-	}
+	//Ning
+	//inline static struct KeyOrNameResult buildActorDisplayName(enum ActorType a0, std::string const& a1, class Actor const* a2) {
+	//	struct KeyOrNameResult(*rv)(enum ActorType, std::string const&, class Actor const*);
+	//	*((void**)&rv) = dlsym("?buildActorDisplayName@@YA?AUKeyOrNameResult@@W4ActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVActor@@@Z");
+	//	return (*rv)(std::forward<enum ActorType>(a0), std::forward<std::string const&>(a1), std::forward<class Actor const*>(a2));
+	//}
+	//
+	//inline string buildActorDisplayNames(ActorType a2, string a3, Actor* a4) {
+	//	auto key = buildActorDisplayName(a2, a3, a4);
+	//	if (!key.misKey) {
+	//		return key.mName;
+	//	}
+	//	return "";
+	//}
 
 	inline string getDisplayName(string displayname, string lang) {
 		auto a1 = I18n::get(displayname, I18n::getLanguage(lang));
@@ -45,7 +45,8 @@ namespace Helper {
 	
 	inline string getActorDisplayName(Actor* ac,string lang) {
 		if (ac->isPlayer()) return ((Player*)ac)->getRealName();
-		return getDisplayName(buildActorDisplayNames(ac->getEntityTypeId(), "", ac), lang);
+		//return getDisplayName(buildActorDisplayNames(ac->getEntityTypeId(), "", ac), lang);
+		return getDisplayName("Admin", lang);
 	}
 	
 	inline vector<string> split(const string& str, const string& pattern)

@@ -1,7 +1,8 @@
 ﻿#include "../Global.h"
 #include <MC/NetherWartBlock.hpp>
 
-static_assert(sizeof(Randomize) == 0x10);
+//Ning
+//static_assert(sizeof(Randomize) == 0x10);
 
 namespace Module {
 

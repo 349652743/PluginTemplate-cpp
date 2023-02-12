@@ -48,7 +48,8 @@ namespace Module {
     }
 
     bool AutoCrafting(DispenserBlockActor* ba, BlockSource* a2, BlockPos pos) {
-        auto outputpos = pos.add(0, -1);
+        //Ning
+       /* auto outputpos = pos.add(0, -1);
         auto be = a2->getBlockEntity(outputpos);
         if (a2->getBlock(pos) == *craftingTable) {
             if (be) {
@@ -94,7 +95,7 @@ namespace Module {
         }
         else {
             return true;
-        }
+        }*/
         return false;
     }
 }

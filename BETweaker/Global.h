@@ -6,7 +6,7 @@
 #define VERSION_RES ll::Version{PLUGIN_VERSION_MAJOR, PLUGIN_VERSION_MINOR, PLUGIN_VERSION_REVISION}
 #define BDSP TARGET_BDS_PROTOCOL_VERSION
 #define toStr(x) std::to_string(x)
-#define getI18n(x,n) I18n::get(x,n)
+#define getI18n(x,n) I18n::get(x)
 #define H(x) do_hash2(x)
 
 #include <iostream>

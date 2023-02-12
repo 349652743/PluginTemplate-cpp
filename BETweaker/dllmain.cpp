@@ -1,13 +1,13 @@
 // dllmain.cpp : 定义 DLL 应用程序的入口点。
 #include "Global.h"
 #include <LLAPI.h>
-#pragma comment(lib, "../SDK/Lib/bedrock_server_api.lib")
-#pragma comment(lib, "../SDK/Lib/bedrock_server_var.lib")
-#pragma comment(lib, "../SDK/Lib/SymDBHelper.lib")
-#pragma comment(lib, "../SDK/Lib/LiteLoader.lib")
-#pragma comment(lib, "../SDK/Lib/libssl.lib")
-#pragma comment(lib, "../SDK/Lib/libcrypto.lib")
-#pragma comment(lib, "../SDK/Lib/concurrencpp.lib")
+#pragma comment(lib, "C:/Users/Ning/Desktop/PluginTemplate-cpp/SDK/Lib/bedrock_server_api.lib")
+#pragma comment(lib, "C:/Users/Ning/Desktop/PluginTemplate-cpp/SDK/Lib/bedrock_server_var.lib")
+#pragma comment(lib, "C:/Users/Ning/Desktop/PluginTemplate-cpp/SDK/Lib/SymDBHelper.lib")
+#pragma comment(lib, "C:/Users/Ning/Desktop/PluginTemplate-cpp/SDK/Lib/LiteLoader.lib")
+#pragma comment(lib, "C:/Users/Ning/Desktop/PluginTemplate-cpp/SDK/Lib/libssl.lib")
+#pragma comment(lib, "C:/Users/Ning/Desktop/PluginTemplate-cpp/SDK/Lib/libcrypto.lib")
+#pragma comment(lib, "C:/Users/Ning/Desktop/PluginTemplate-cpp/SDK/Lib/concurrencpp.lib")
 
 #pragma execution_character_set("utf-8")
 BOOL APIENTRY DllMain(HMODULE hModule,

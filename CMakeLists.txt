@@ -69,6 +69,7 @@ add_link_options(
 )
 
 add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_FILES_DIR})
+add_library(BETweaker SHARED ${SRC_FILES_DIR} BETweaker/Kernel/AutoCrafting.cpp)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} 
 	"${CMAKE_SOURCE_DIR}/SDK/lib/LiteLoader.lib"

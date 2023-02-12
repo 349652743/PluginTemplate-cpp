@@ -36,7 +36,8 @@ void BETweakerUpgradeCommand(CommandOutput& output, bool isForce)
 enum class AbilitiesLayer;
 void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
 {
-    ActorUniqueID uid = player.getUniqueID();
+    //Ning
+   /* ActorUniqueID uid = player.getUniqueID();
 	
     auto abilities = player.getAbilities();
 
@@ -66,7 +67,7 @@ void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
     auto pkt2= UpdateAdventureSettingsPacket(AdventureSettings());
     abilities->setAbility(AbilitiesIndex::Flying, flying);
     player.sendNetworkPacket(pkt2);
-    player.sendNetworkPacket(pkt);
+    player.sendNetworkPacket(pkt);*/
 }
 
 
@@ -520,16 +521,18 @@ public:
 
     void execute(CommandOrigin const& ori, CommandOutput& output) const override
     {
-        vector<CommandOutputParameter>opt;
+        //Ning
+        /*vector<CommandOutputParameter>opt;
         opt.push_back(CommandOutputParameter::CommandOutputParameter(std::to_string(Global<Level>->getLevelSeed64().mSeed)));
-        output.success("commands.seed.success",opt);
+        output.success("commands.seed.success",opt);*/
     }
 
     static void setup(CommandRegistry* registry)
     {
-        // Register Cmd
-        registry->registerCommand("seed", "get level's seed", CommandPermissionLevel::GameMasters, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
-        registry->registerOverload<SeedCommand>("seed");
+        //Ning
+        //// Register Cmd
+        //registry->registerCommand("seed", "get level's seed", CommandPermissionLevel::GameMasters, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
+        //registry->registerOverload<SeedCommand>("seed");
     }
 };
 
@@ -540,7 +543,8 @@ void RegisterCommands()
         if (Settings::HUBinfo) RegHubInfoCommand();
        // RegEmoteCommand();
         BETCommand::setup(ev.mCommandRegistry);
-       if(Settings::SeedCommand) SeedCommand::setup(ev.mCommandRegistry);
+        //Ning
+       //if(Settings::SeedCommand) SeedCommand::setup(ev.mCommandRegistry);
         return true;
         });
 }

@@ -83,42 +83,44 @@ typedef std::chrono::high_resolution_clock timer_clock;
             .count();
 
 TInstanceHook2("AutoCrafting", void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z", DispenserBlock, BlockSource* a2, BlockPos* a3) {
-	if(!Settings::AutoCrafting) return original(this, a2, a3);
-	DispenserBlockActor* BlockEntity = (DispenserBlockActor*)a2->getBlockEntity(*a3);
-	if (BlockEntity)
-	{
-		auto Container = BlockEntity->getContainer();
-		((RandomizableBlockActorContainerBase*)BlockEntity)->unPackLootTable(*Global<Level>, *Container, a2->getDimensionId(), 0);
-		int v9 = BlockEntity->getRandomSlot();
-		auto& items = Container->getItem(v9);
-		if (!items.isNull() && items.getCount() > 0)
-		{
-			int face = getFacing(a2->getBlock(*a3));
-			auto newpos = a3->neighbor(face);
-			if(Settings::AutoCrafting)
-				if (!Module::AutoCrafting(BlockEntity, a2, newpos))return;
-		}
-	}
+	//Ning
+	//if(!Settings::AutoCrafting) return original(this, a2, a3);
+	//DispenserBlockActor* BlockEntity = (DispenserBlockActor*)a2->getBlockEntity(*a3);
+	//if (BlockEntity)
+	//{
+	//	auto Container = BlockEntity->getContainer();
+	//	((RandomizableBlockActorContainerBase*)BlockEntity)->unPackLootTable(*Global<Level>, *Container, a2->getDimensionId(), 0);
+	//	int v9 = BlockEntity->getRandomSlot();
+	//	auto& items = Container->getItem(v9);
+	//	if (!items.isNull() && items.getCount() > 0)
+	//	{
+	//		int face = getFacing(a2->getBlock(*a3));
+	//		auto newpos = a3->neighbor(face);
+	//		if(Settings::AutoCrafting)
+	//			if (!Module::AutoCrafting(BlockEntity, a2, newpos))return;
+	//	}
+	//}
 	return original(this,a2,a3);
 }
 
 TInstanceHook2("DispenserDestroy", void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z", DispenserBlock, BlockSource* a2, BlockPos* a3) {
-	if (!Settings::DispenserDestroyBlock ) return original(this, a2, a3);
-	DispenserBlockActor* BlockEntity = (DispenserBlockActor*)a2->getBlockEntity(*a3);
-	if (BlockEntity)
-	{
-		auto Container = BlockEntity->getContainer();
-		((RandomizableBlockActorContainerBase*)BlockEntity)->unPackLootTable(*Global<Level>, *Container, a2->getDimensionId(), 0);
-		int v9 = BlockEntity->getRandomSlot();
-		auto& items = Container->getItem(v9);
-		if (!items.isNull() && items.getCount() > 0)
-		{
-			int face = getFacing(a2->getBlock(*a3));
-			auto newpos = a3->neighbor(face);
-			if (Settings::DispenserDestroyBlock)
-				if (Module::DispenserDestroy((BlockActor*)BlockEntity, a2, &newpos, const_cast<ItemStack&>(items), v9, a3)) return;
-		}
-	}
+	//Ning
+	//if (!Settings::DispenserDestroyBlock ) return original(this, a2, a3);
+	//DispenserBlockActor* BlockEntity = (DispenserBlockActor*)a2->getBlockEntity(*a3);
+	//if (BlockEntity)
+	//{
+	//	auto Container = BlockEntity->getContainer();
+	//	((RandomizableBlockActorContainerBase*)BlockEntity)->unPackLootTable(*Global<Level>, *Container, a2->getDimensionId(), 0);
+	//	int v9 = BlockEntity->getRandomSlot();
+	//	auto& items = Container->getItem(v9);
+	//	if (!items.isNull() && items.getCount() > 0)
+	//	{
+	//		int face = getFacing(a2->getBlock(*a3));
+	//		auto newpos = a3->neighbor(face);
+	//		if (Settings::DispenserDestroyBlock)
+	//			if (Module::DispenserDestroy((BlockActor*)BlockEntity, a2, &newpos, const_cast<ItemStack&>(items), v9, a3)) return;
+	//	}
+	//}
 	return original(this, a2, a3);
 }
 
@@ -182,42 +184,43 @@ THook(int, "?getComparatorSignal@DispenserBlock@@UEBAHAEAVBlockSource@@AEBVBlock
 TInstanceHook(bool, "?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H@Z",
 	Hopper, BlockSource& region, Container* fromContainer, Vec3 position, unsigned int attachedFace)
 {
-	auto pos = getTargeBlock(position, (FaceID)attachedFace);
-	auto ba = region.getBlockEntity(pos);
-	if (ba) {
-		if (ba->getType() == BlockActorType::Dispenser) {
-			auto& block = region.getBlock(pos);
-			auto newpos = pos.neighbor(((DispenserBlock*)&block.getLegacyBlock())->getFacing(block));
-			auto outputpos = pos.add(0, -1);
-			if (region.getBlock(newpos) == *Module::craftingTable) {
-				if (fromContainer) {
-					auto fromitemlist = fromContainer->getAllSlots();
-					for (int i = 0; i < fromitemlist.size(); ++i) {
-						auto item = fromitemlist[i];
-						if (!item->isNull()) {
-							auto toContainer = _getAttachedContainerInBlock(region, position, attachedFace);
-							if (toContainer) {
-								auto itemlist = toContainer->getAllSlots();
-								for (auto j = 0; j < itemlist.size(); ++j) {
-									auto items = itemlist[j];
-									if (items->isNull()) {
-										auto newitem = item->clone_s();
-										newitem->set(1);
-										toContainer->setItem(j, *newitem);
-										fromContainer->removeItem_s(i, 1);
-										delete newitem;
-										break;
-									}
-								}
-							}
-							break;
-						}
-					}
-				}
-				return 1;
-			}
-		}
-	}
+	//Ning
+	//auto pos = getTargeBlock(position, (FaceID)attachedFace);
+	//auto ba = region.getBlockEntity(pos);
+	//if (ba) {
+	//	if (ba->getType() == BlockActorType::Dispenser) {
+	//		auto& block = region.getBlock(pos);
+	//		auto newpos = pos.neighbor(((DispenserBlock*)&block.getLegacyBlock())->getFacing(block));
+	//		auto outputpos = pos.add(0, -1);
+	//		if (region.getBlock(newpos) == *Module::craftingTable) {
+	//			if (fromContainer) {
+	//				auto fromitemlist = fromContainer->getAllSlots();
+	//				for (int i = 0; i < fromitemlist.size(); ++i) {
+	//					auto item = fromitemlist[i];
+	//					if (!item->isNull()) {
+	//						auto toContainer = _getAttachedContainerInBlock(region, position, attachedFace);
+	//						if (toContainer) {
+	//							auto itemlist = toContainer->getAllSlots();
+	//							for (auto j = 0; j < itemlist.size(); ++j) {
+	//								auto items = itemlist[j];
+	//								if (items->isNull()) {
+	//									auto newitem = item->clone_s();
+	//									newitem->set(1);
+	//									toContainer->setItem(j, *newitem);
+	//									fromContainer->removeItem_s(i, 1);
+	//									delete newitem;
+	//									break;
+	//								}
+	//							}
+	//						}
+	//						break;
+	//					}
+	//				}
+	//			}
+	//			return 1;
+	//		}
+	//	}
+	//}
 	original(this, region, fromContainer, position, attachedFace);
 	return 1;
 }
@@ -291,15 +294,16 @@ TInstanceHook(bool, "?use@DoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z", DoorB
 
 TInstanceHook(__int64, "?interact@Player@@QEAA_NAEAVActor@@AEBVVec3@@@Z",
 	Player, Actor* a2, Vec3* a3) {
-	if (Settings::FastSetMinecart) {
-		if (this->isSneaking() && a2->getTypeName() == "minecraft:minecart")
-			try {
-			Module::FastSetMinecart(this, a2);
-		}
-		catch (...) {
-			return original(this, a2, a3);
-		}
-	}
+	//Ning
+	//if (Settings::FastSetMinecart) {
+	//	if (this->isSneaking() && a2->getTypeName() == "minecraft:minecart")
+	//		try {
+	//		Module::FastSetMinecart(this, a2);
+	//	}
+	//	catch (...) {
+	//		return original(this, a2, a3);
+	//	}
+	//}
 	return original(this, a2, a3);
 }
 
