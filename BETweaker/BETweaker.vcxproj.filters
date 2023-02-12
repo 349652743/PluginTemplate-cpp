@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Kernel">
+      <UniqueIdentifier>{c73cdbaf-9bfc-46dd-bda7-40dbe65d10f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{ac00c31e-0bc7-42e5-921a-9131b52ac350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\renewable">
+      <UniqueIdentifier>{98aa38f7-530f-481c-9a93-ec8e9ccd01c5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\Helper.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\Module.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\setting.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\BetterHarvestingCrop.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FastSleep.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\setting.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\Hook.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\HUBInfo.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\EditSign.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FastLeafDecay.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DispenserCrops.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\AutoFish.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DoubleDoors.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FastSetMinecart.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoUprade.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\AutoSupplyItem.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\StickRecipe.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\CuttingTree.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\AnvilRestoration.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\BetterThanMending.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\EmoteList.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="BetterBDS.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\AutoCrafting.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\RemoteTranItem.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\renewable\Sponges.cpp">
+      <Filter>Kernel\renewable</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\renewable\Deepslate.cpp">
+      <Filter>Kernel\renewable</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BETweaker.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
