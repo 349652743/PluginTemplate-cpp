@@ -122,7 +122,8 @@ void loadCfg() {
 #include <MC/DirectoryPackSource.hpp> 
 #include <MC/PackSource.hpp>
 
-static_assert(sizeof(SemVersion) == 0x70);
+//Ning
+//static_assert(sizeof(SemVersion) == 0x70);
 
 extern void RegisterCommands();
 

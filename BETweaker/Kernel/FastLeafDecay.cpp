@@ -48,6 +48,7 @@ namespace Module {
                 leafBlockDim.push(a2->getDimensionId());
             }
         }
+        return true;
     }
 
     bool FastLeafDecayFunc() {

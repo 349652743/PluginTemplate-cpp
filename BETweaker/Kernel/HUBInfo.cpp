@@ -166,6 +166,7 @@ namespace Module {
                         }
                     }
                 }
+                return true;
                 });
             }, 3);
     }

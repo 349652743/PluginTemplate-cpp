@@ -17,18 +17,17 @@
 static ScheduleTask temp;
 namespace Module {
     bool canFastSleep() {
-        auto Probability = Settings::FastSleepProbability;
-        auto sleepPlayerCount = sleepList.size();
-        auto ActivePlayerCount = Global<Level>->getActivePlayerCount();
-        if ((float)ActivePlayerCount * Probability <= (float)sleepPlayerCount) {
+        if (sleepList.size() == 0) return false;
+        auto Probability = (float)(Settings::FastSleepProbability);
+        auto sleepPlayerCount = (float)(sleepList.size());
+        auto ActivePlayerCount = (float)(Global<Level>->getActivePlayerCount());
+        if (ActivePlayerCount * Probability <= sleepPlayerCount) {
             return true;
         }
         return false;
     }
     void cancelSleep() {
-        if (!canFastSleep()) {
-            temp.cancel();
-        }
+         temp.cancel();
     }
 	
     void FastSleep() {
@@ -41,8 +40,8 @@ namespace Module {
                         auto& gameRule = level->getGameRules();
                         if (gameRule.getBool(GameRuleId(1), 0)) {
                             level->setTime((unsigned int)(24000 * ((level->getTime() + 24000) / 24000)));
-                            auto pkt = SetTimePacket(level->getTime());
-                            level->getPacketSender()->send(pkt);
+                            //auto pkt = SetTimePacket(level->getTime());
+                            //level->getPacketSender()->send(pkt);
                             Global<Level>->forEachPlayer([](Player& pl)->bool {
                                 if (pl.isSleeping()) {
                                     pl.stopSleepInBed(0, 0);

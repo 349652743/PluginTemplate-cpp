@@ -36,5 +36,6 @@ namespace Module {
             auto& af = Global<Level>->getActorFactory();
             Global<Level>->addEntity(*pl->getBlockSource(), af.createTransformedActor(ActorDefinitionIdentifier(getMinecartActorType(item->getTypeName())), ac));
         }*/
+        return true;
     }
 }
