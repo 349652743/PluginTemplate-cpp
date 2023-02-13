@@ -1,8 +1,4 @@
 # BETweaker
-<p align="center">
-<img src=".github/logo.png" alt="drawing" style="width:600px;"/>
-</p>
-
 ##### [English](README.md) | 简体中文
 
 `BETweaker`是一个添加游戏实用功能的插件，给生存玩家提供非常丰富而且实用的功能。</br>
@@ -49,9 +45,6 @@
 
 
 本插件所有功能性设置均可以在游戏内使用 **/bet** 来进行开关，或在游戏外 **"/plugins/BETweaker/config.json"** 目录下进行配置
-<p align="center">
-<img src="https://s4.ax1x.com/2022/02/25/bkQNdS.png" alt="drawing" style="width:600px;"/>
-</p>
 
 除此之外，本插件**不会在不告知玩家的前提下修改原版游戏特性（如有修改游戏特性，将会标明），且所有功能均可选择性关闭**，而且理论上不会影响存档，你可以随时移除本插件而不对存档造成影响，因此本插件十分适合在生存服中使用。
 
